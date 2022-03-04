@@ -1,0 +1,89 @@
+﻿@model EmpleadoAdd
+@{
+    ViewBag.Title = "Empleado";
+    ViewBag.Subtitulo = "Crear";
+}
+
+<div>
+    <form asp-controller="Empleado" asp-action="Add">
+        <div class="mb-3">
+            <label asp-for="Nombre" class="form-label">Nombre</label>
+
+            <input type="text" asp-for="Nombre" class="form-control">
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ApellidoPaterno" class="form-label">ApellidoPaterno</label>
+
+            <input type="text" asp-for="ApellidoPaterno" class="form-control">
+            <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ApellidoMaterno" class="form-label">ApellidoMaterno</label>
+
+            <input type="text" asp-for="ApellidoMaterno" class="form-control">
+            <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="FechaNacimiento" class="form-label">FechaNacimiento</label>
+
+            <input type="text" asp-for="FechaNacimiento" class="form-control">
+            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Genero" class="form-label">Genero</label>
+
+            <input type="text" asp-for="Genero" class="form-control">
+            <span asp-validation-for="Genero" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EstadoCivil" class="form-label">EstadoCivil</label>
+
+            <input type="text" asp-for="EstadoCivil" class="form-control">
+            <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="RFC" class="form-label">RFC</label>
+
+            <input type="text" asp-for="RFC" class="form-control">
+            <span asp-validation-for="RFC" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Direccion" class="form-label">Direccion</label>
+
+            <input type="text" asp-for="Direccion" class="form-control">
+            <span asp-validation-for="Direccion" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+
+            <input type="text" asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Telefono" class="form-label">Telefono</label>
+
+            <input type="text" asp-for="Telefono" class="form-control">
+            <span asp-validation-for="Telefono" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Puesto" class="form-label">Puesto</label>
+
+            <input type="text" asp-for="Puesto" class="form-control">
+            <span asp-validation-for="Puesto" class="text-danger"></span>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Registrar">
+        <a asp-controller="Empleado" asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+@section Scripts
+{
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#FechaNacimiento").datepicker();
+        });
+    </script>
+}

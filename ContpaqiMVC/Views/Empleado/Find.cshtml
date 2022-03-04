@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Empleados";
+    ViewBag.Subtitulo = "Buscar";
+
+    List<Estatus>
+      LocalData = new List<Estatus>
+          {
+        new Estatus() { Id= 1, Text= "labora actualmente" },
+        new Estatus() { Id= 2, Text= "empleado dado de baja" },
+                                  };
+}
+<div>
+    <form asp-controller="Empleado" asp-action="Index">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+
+            <input type="text" name="Nombre" class="form-control">
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">RFC</label>
+
+            <input type="text" name="RFC" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Estatus</label>
+
+            <select class="form-control selectpicker" name="Estatus">
+                <option value="0">--select--</option>
+                @foreach (var item in LocalData)
+                {
+                    <option value="@item.Id">@item.Text</option>
+                }
+            </select>
+
+        </div>
+        <input type="submit" class="btn btn-primary" value="Buscar">
+        <a asp-controller="Empleado" asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+@section Scripts
+{
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+}
+
